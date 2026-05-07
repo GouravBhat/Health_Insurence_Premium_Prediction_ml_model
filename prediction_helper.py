@@ -116,6 +116,18 @@ def handle_scaling(age, df):
 def predict(input_dict):
     input_df = preprocess_input(input_dict)
 
+    print("FINAL INPUT DF")
+    print(input_df)
+
+    print("COLUMNS")
+    print(input_df.columns)
+
+    print("DTYPES")
+    print(input_df.dtypes)
+
+    print("VALUES")
+    print(input_df.values)
+
     
 
     if input_dict['Age'] <= 25:
