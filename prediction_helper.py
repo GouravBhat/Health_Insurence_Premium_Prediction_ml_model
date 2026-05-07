@@ -102,9 +102,10 @@ def handle_scaling(age, df):
     training_columns = scaler_object['training_col']
     scaler = scaler_object['scaler']
 
-    df['income_level'] = 0 # since scaler object expects income_level supply it. This will have no impact on anything
+     # since scaler object expects income_level supply it. This will have no impact on anything
 
     df = df[training_columns]
+    df['income_level'] = 0
     
     df[cols_to_scale] = scaler.transform(df[cols_to_scale])
 
