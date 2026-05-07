@@ -118,7 +118,7 @@ def predict(input_dict):
     input_df = preprocess_input(input_dict)
 
     st.write("FINAL INPUT DF")
-    st.write(input_df)
+    st.write(input_df) 
 
     st.write("VALUES")
     st.write(input_df.values)

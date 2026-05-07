@@ -79,4 +79,4 @@ if st.button('Predict'):
     prediction,input_df = predict(input_dict)
     st.success(f'Predicted Health Insurance Cost: {prediction}')
     st.write(prediction)
-    st.write(input_df)
+    st.write(input_df) 
