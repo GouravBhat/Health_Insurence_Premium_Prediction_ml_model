@@ -99,10 +99,13 @@ def handle_scaling(age, df):
         scaler_object = scaler_rest
 
     cols_to_scale = scaler_object['cols']
+    training_columns = scaler_object['training_col']
     scaler = scaler_object['scaler']
 
     df['income_level'] = 0 # since scaler object expects income_level supply it. This will have no impact on anything
-    df = df.reindex(columns=df.columns.tolist(), fill_value=0)
+
+    df = df[training_columns]
+    
     df[cols_to_scale] = scaler.transform(df[cols_to_scale])
 
     df.drop('income_level', axis='columns', inplace=True)
