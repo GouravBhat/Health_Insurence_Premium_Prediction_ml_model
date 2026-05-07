@@ -2,6 +2,7 @@
 
 import pandas as pd
 import joblib
+import streamlit as st
 
 model_young = joblib.load("artifacts/model_young.joblib")
 model_rest = joblib.load("artifacts/model_rest.joblib")
@@ -116,23 +117,16 @@ def handle_scaling(age, df):
 def predict(input_dict):
     input_df = preprocess_input(input_dict)
 
-    print("FINAL INPUT DF")
-    print(input_df)
+    st.write("FINAL INPUT DF")
+    st.write(input_df)
 
-    print("COLUMNS")
-    print(input_df.columns)
+    st.write("VALUES")
+    st.write(input_df.values)
 
-    print("DTYPES")
-    print(input_df.dtypes)
-
-    print("VALUES")
-    print(input_df.values)
-
-    
 
     if input_dict['Age'] <= 25:
         prediction = model_young.predict(input_df)
     else:
         prediction = model_rest.predict(input_df)
 
-    return int(prediction[0])
+    return int(prediction[0]), input_df

@@ -76,5 +76,7 @@ input_dict = {
 
 # Button to make prediction
 if st.button('Predict'):
-    prediction = predict(input_dict)
+    prediction,input_df = predict(input_dict)
     st.success(f'Predicted Health Insurance Cost: {prediction}')
+    st.write(prediction)
+    st.write(input_df)
