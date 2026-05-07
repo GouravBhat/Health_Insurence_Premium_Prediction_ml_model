@@ -121,7 +121,7 @@ def predict(input_dict):
     st.write(input_df) 
 
     st.write("VALUES")
-    st.write(input_df.values)
+    st.write(input_df.values) 
 
 
     if input_dict['Age'] <= 25:
